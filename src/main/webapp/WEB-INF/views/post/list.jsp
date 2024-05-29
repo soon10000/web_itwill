@@ -28,17 +28,22 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>NO</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>ModifiedTime</th>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>수정시간</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach items="${posts}" var="p">
                             <tr>
                                 <td>${p.id}</td>
-                                <td>${p.title}</td>
+                                <td>
+                                    <c:url var="postDetailsPage" value="/post/details" >
+                                        <c:param name="id" value="${p.id}"></c:param> <!-- 해당 링크에 변동적인 id 파라미터를 주기위해 EL을 이용하여 id값을 넘김 -->
+                                    </c:url>
+                                    <a href="${postDetailsPage}">${p.title}</a>
+                                </td>
                                 <td>${p.author}</td>
                                 <td>${p.modifiedTime}</td>
                             </tr>

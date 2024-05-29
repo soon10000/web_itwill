@@ -29,7 +29,7 @@ public class PostListController extends HttpServlet {
 		
 		// TODO: DB POSTS 테이블에서 전체 검색을 하고, 그 결과를 뷰에 전달
 		List<Post> list = postService.read();
-		req.setAttribute("posts", list);
+		req.setAttribute("posts", list); 
 		
 		req.getRequestDispatcher("/WEB-INF/views/post/list.jsp").forward(req, resp);
 	}

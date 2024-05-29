@@ -11,7 +11,6 @@
 </head>
 <body>
     <div class="container-fluid">
-    
     <%-- pageContext.setAttribute("pageTitle", "Home"); --%>
     <c:set var="pageTitle" value="Home" scope="page"/> <%--fragment에 있는 EL (${})에 있는 변수 이름과 동일하게 설정하면 됨. --%>
         <%@ include file="./fragments/header.jspf" %>
